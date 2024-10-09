@@ -1,0 +1,265 @@
+html{
+    margin:0;
+    padding:0;
+    background-image: linear-gradient(to bottom right, rgb(91, 128, 90), rgba(255, 255, 0, 0.253));
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.wrapper_image{
+    display: flex;
+    max-width: 64px;
+    max-height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+}
+
+h1{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+p{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    text-align: left;
+}
+
+h1,p{
+    font-family: 'Roboto', sans-serif;
+}
+
+.row {
+    display: flex;
+    padding-top: 13px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.row>.left {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.row>.right {
+    display: flex;
+    width: 49%;
+    box-sizing: border-box;
+}
+
+
+#imageBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 640px;
+    height: auto;
+    margin-top: 15px;
+}
+
+#textInputsBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#preview_image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    outline: 5px solid black;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.btn-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    text-decoration: underline solid black;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#btn-detect{
+    background-color: #999999;
+    color: white;
+    padding: 14px;
+    margin: 0px 0;
+    border: none;
+    cursor: pointer;
+    width: 600px;
+    border: 5px solid black;
+    z-index: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 130%;
+}
+
+#btn-detect:hover {
+    background-color: #747474;
+}
+
+#btn-detect:active {
+    background-color: #5B5B5B;
+    box-shadow: inset solid black;
+}
+
+#btn-detect:disabled{
+    background-color: #5B5B5B;
+    box-shadow: inset solid black;
+}
+
+#resultTitle{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    text-decoration: underline solid black;
+}
+
+#resultBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 20px 0;
+    outline: 5px solid black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.right-duplicate {
+    display: none;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+}
+
+#file_name{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#resultText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: yellow;
+
+}
+
+#filler-message{
+    display:flex;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+
+input[type="file"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #5D825B;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    outline: 1px solid black;
+}
+
+input[type="file"]:hover {
+    background-color: #5D825B;
+}
+
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+
+@media screen and (max-width: 1340px) {
+    .row>.right {
+        display: none;
+    }
+    .row>.left {
+        flex-grow: 1;
+    }
+    .right-duplicate {
+        display: flex;
+    }
+    #descriptionText{
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 675px) {
+    #imageBox {
+        width: 100%;
+        height: auto;
+    }
+    #btn-detect{
+        padding: 14px;
+        margin: 0px 0;
+        border: none;
+        cursor: pointer;
+        width: 90%;
+        height: auto;
+        border: 5px solid black;
+        z-index: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    
+        font-family: 'Roboto', sans-serif;
+        font-size: 130%;
+    }
+}

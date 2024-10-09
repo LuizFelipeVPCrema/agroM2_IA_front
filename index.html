@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador para folhas de soja</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <img class="logo" src="./logo.png" alt="Logo Agro M2">
+    <div class="row">
+        <div class="left">
+            <h1>Visualização da imagem</h1>
+            <div id="imageBox">
+                <img id="preview_image" src="./placeholder640x640.svg" alt="Preview Image">
+                <button id='btn-detect'>Predict Image</button>
+            </div>
+        </div>
+        <div class="right">
+            <div id="textInputsBox">
+                <h1>Classificador de imagens</h1>
+                <p id="descriptionText">Ao escolher um arquivo de modelo de classificação de imagens em formato .onnx, e
+                    uma imagem ou pasta contendo imagens, os resultados de predição serão exibidos na página.
+                    <br>Apenas 250 imagens podem ser processadas por vez, então serão ignorados todos os outros arquivos
+                    da pasta após esse número.
+                </p>
+                <div class="button-section">
+                    <span class="btn-label">Modelo: </span>
+                    <input type="file" id='file-model'>
+                </div>
+                <div>
+                    <span class="btn-label">Rótulos de Classe: </span>
+                    <input type="file" id='class-label' />
+                </div>
+                <div>
+                    <span class="btn-label">Imagem: </span>
+                    <input type="file" id='file-image' />
+                </div>
+                <div>
+                    <span class="btn-label">Pasta de Imagens: </span>
+                    <input type="file" id='folder-input' webkitdirectory />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="right-duplicate">
+        <div id="textInputsBox">
+            <h1>Classificador de imagens</h1>
+            <p id="descriptionText">Ao escolher um arquivo de modelo de classificação de imagens em formato .onnx, e uma
+                imagem ou pasta contendo imagens, os resultados de predição serão exibidos na página.
+                <br>Apenas 250 imagens podem ser processadas por vez, então serão ignorados todos os outros arquivos da
+                pasta após esse número.
+            </p>
+            <div>
+                <span class="btn-label">Modelo: </span>
+                <input type="file" id='file-model-duplicate' />
+            </div>
+            <div>
+                <span class="btn-label">Imagem: </span>
+                <input type="file" id='file-image-duplicate' />
+            </div>
+            <div>
+                <span class="btn-label">Pasta de Imagens: </span>
+                <input type="file" id='folder-input-duplicate' webkitdirectory />
+            </div>
+            <div>
+                <span class="btn-label">Rótulos de Classe: </span>
+                <input type="file" id='class-label-duplicate' />
+            </div>
+        </div>
+    </div>
+    <div id="resultTitle">
+        <h1>Resultados</h1>
+    </div>
+    <div id="resultBox">
+        <span id="filler-message">Aguardando imagens...</span>
+    </div>
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/onnxruntime-web@1.18.0/dist/ort.min.js "></script>
+<script src="./script.js"> </script>
+
+</html>
